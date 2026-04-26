@@ -24,7 +24,9 @@ function App() {
       <main className="pt-20 md:ml-64">
         <Home />
       </main>
-      <Footer />
+      <div className="md:ml-64">
+        <Footer />
+      </div>
     </div>
   );
 }
