@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
-import { Analytics } from "@vercel/analytics/next";
 import Footer from "./components/Footer";
-Analytics;
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
