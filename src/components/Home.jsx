@@ -8,7 +8,7 @@ import Contact from "./Contact";
 
 function Home() {
   return (
-    <section id="home">
+    <section>
       <Hero />
       <About />
       <Skills />

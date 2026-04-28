@@ -4,50 +4,6 @@ import { useRef } from "react";
 import { FiBriefcase, FiBook, FiDownload, FiCalendar } from "react-icons/fi";
 import { education, experiences } from "../utils/resume";
 
-// const experiences = [
-//   {
-//     title: "Frontend Developer Intern",
-//     company: "Company Name",
-//     period: "Jan 2024 - Present",
-//     description:
-//       "Built and maintained responsive web interfaces using React and Tailwind CSS. Collaborated with the design team to implement pixel-perfect UI components.",
-//     tags: ["React", "Tailwind", "Git"],
-//   },
-//   {
-//     title: "Freelance Web Developer",
-//     company: "Self Employed",
-//     period: "Jun 2023 - Dec 2023",
-//     description:
-//       "Designed and developed websites for small businesses. Handled everything from design to deployment including SEO optimization.",
-//     tags: ["HTML", "CSS", "JavaScript"],
-//   },
-//   {
-//     title: "Junior Developer",
-//     company: "Startup Name",
-//     period: "Jan 2023 - May 2023",
-//     description:
-//       "Assisted senior developers in building web applications. Wrote clean reusable components and participated in code reviews.",
-//     tags: ["React", "Node.js", "MongoDB"],
-//   },
-// ];
-
-// const education = [
-//   {
-//     degree: "B.Sc. Computer Science",
-//     school: "Your University",
-//     period: "2020 - 2024",
-//     description:
-//       "Studied core computer science concepts including data structures, algorithms, software engineering and web development.",
-//   },
-//   {
-//     degree: "Frontend Development Bootcamp",
-//     school: "Online Platform",
-//     period: "2022",
-//     description:
-//       "Intensive bootcamp covering modern frontend technologies including React, JavaScript ES6+ and responsive design.",
-//   },
-// ];
-
 const TimelineItem = ({ item, index, isInView, isExperience }) => {
   return (
     <motion.div
@@ -70,7 +26,7 @@ const TimelineItem = ({ item, index, isInView, isExperience }) => {
       {/* Card */}
       <div className="bg-white dark:bg-gray-800 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow duration-300">
         {/* Period */}
-        <div className="flex items-center gap-2 text-yellow-500 dark:text-yellow-400 text-xs font-semibold mb-2">
+        <div className="flex  items-center gap-2 text-yellow-500 dark:text-yellow-400 text-xs font-semibold mb-2">
           <FiCalendar size={13} />
           {isExperience ? item.period : item.period}
         </div>
@@ -151,7 +107,7 @@ const Resume = () => {
         </motion.div>
 
         {/* Two Column Timeline */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Experience Column */}
           <div>
             <motion.div

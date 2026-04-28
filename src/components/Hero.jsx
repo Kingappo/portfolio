@@ -32,8 +32,8 @@ const Hero = () => {
 
   return (
     <section
-      id="hero"
-      className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-950 transition-colors duration-300 px-6"
+      id="home"
+      className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-950 transition-colors duration-300 px-6 overflow-hidden"
     >
       <div className="max-w-4xl mx-auto text-center">
         {/* Greeting */}
@@ -51,7 +51,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white mb-4"
+          className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white mb-4"
         >
           Kingsley Oluchukwu
         </motion.h2>

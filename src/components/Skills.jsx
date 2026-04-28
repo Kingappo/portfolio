@@ -31,7 +31,7 @@ const Skills = () => {
         </motion.div>
 
         {/* Skill Cards with Progress Bars */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
           {skillCategories.map((category, catIndex) => (
             <motion.div
               key={catIndex}

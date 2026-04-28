@@ -2,18 +2,10 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { facts } from "../utils/about";
-// import { FiCode, FiCoffee, FiMusic, FiBook } from "react-icons/fi";
 
 const About = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  // const facts = [
-  //   { icon: <FiCode size={20} />, text: "Passionate about clean code" },
-  //   { icon: <FiCoffee size={20} />, text: "Fueled by coffee & curiosity" },
-  //   { icon: <FiMusic size={20} />, text: "Music lover while coding" },
-  //   { icon: <FiBook size={20} />, text: "Always learning something new" },
-  // ];
 
   return (
     <section
@@ -21,13 +13,13 @@ const About = () => {
       ref={ref}
       className="min-h-screen flex items-center bg-gray-50 dark:bg-gray-900 transition-colors duration-300 px-6 py-24"
     >
-      <div className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Left - Image */}
         <motion.div
           initial={{ opacity: 0, x: -60 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="flex justify-center"
+          className="hidden md:flex justify-center"
         >
           <div className="relative w-72 h-72 md:w-96 md:h-96">
             {/* Decorative border */}
@@ -42,10 +34,6 @@ const About = () => {
                   e.target.style.display = "none";
                 }}
               />
-              {/* Fallback if no image */}
-              {/* <div className="absolute inset-0 flex items-center justify-center text-6xl">
-                🧑‍💻
-              </div> */}
             </div>
             {/* Floating badge */}
             <motion.div
@@ -82,11 +70,12 @@ const About = () => {
           <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
             Hi! I'm{" "}
             <span className="text-yellow-500 dark:text-yellow-400 font-semibold">
-              Your Name
+              Kingsley Oluchukwu{" "}
+              <span className="text-sm text-gray-400">(gappo)</span>
             </span>
             , a passionate frontend developer based in{" "}
             <span className="font-semibold text-gray-800 dark:text-white">
-              Your City
+              Lagos
             </span>
             . I love turning ideas into beautiful, functional web experiences.
           </p>
@@ -94,7 +83,7 @@ const About = () => {
           <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
             I started my programming journey in{" "}
             <span className="font-semibold text-gray-800 dark:text-white">
-              Year
+              2024
             </span>{" "}
             and have been obsessed with building things ever since. I specialize
             in React and modern frontend technologies.

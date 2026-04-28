@@ -10,7 +10,7 @@ export const contactInfo = [
   {
     icon: <FiPhone size={20} />,
     label: "Phone",
-    value: "+234 704 0915 878",
+    value: "+234 704 091 5878",
     href: "tel:+2347040915878",
   },
   {

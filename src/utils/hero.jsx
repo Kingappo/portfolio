@@ -12,14 +12,18 @@ export const roles = [
 export const socialLinks = [
   {
     icon: <FaWhatsapp size={22} />,
-    href: "https://github.com",
+    href: "https://wa.me/2347040915878",
     label: "WhatsApp",
   },
-  { icon: <FiGithub size={22} />, href: "https://github.com", label: "Github" },
+  {
+    icon: <FiGithub size={22} />,
+    href: "https://github.com/kingappo",
+    label: "Github",
+  },
   {
     icon: <FiLinkedin size={22} />,
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/in/kingsley-odoh-8bbb36380/",
     label: "LinkedIn",
   },
-  { icon: <FaX size={22} />, href: "https://twitter.com", label: "X" },
+  { icon: <FaX size={22} />, href: "https://x.com/kingleyodoh", label: "X" },
 ];

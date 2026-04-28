@@ -1,13 +1,52 @@
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
 html {
   scroll-behavior: smooth;
 }
 
+/* Offset scroll anchors to account for sidebar on desktop */
 @media (min-width: 768px) {
   section[id] {
-    scroll-margin-left: 16rem; /* 256px = w-64 */
+    scroll-margin-top: 2rem;
   }
+}
+
+/* Offset scroll for mobile navbar */
+@media (max-width: 767px) {
+  section[id] {
+    scroll-margin-top: 4rem;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #eab308;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ca8a04;
 }
