@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { facts } from "../utils/about";
+import { facts } from "../utils/data";
 
 const About = () => {
   const ref = useRef(null);
@@ -27,7 +27,7 @@ const About = () => {
             {/* Image */}
             <div className="relative z-10 w-full h-full rounded-2xl bg-gray-200 dark:bg-gray-700 overflow-hidden">
               <img
-                src="img/img1.jpg"
+                src="img/profile-gappo.png"
                 alt="Profile"
                 className="w-full h-full object-cover"
                 onError={(e) => {

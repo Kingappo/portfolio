@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { roles, socialLinks } from "../utils/hero";
+import { roles, socialLinks } from "../utils/data";
 
 const Hero = () => {
   const [currentRole, setCurrentRole] = useState(0);

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { skillCategories, techStack } from "../utils/skills";
+import { skillCategories, techStack } from "../utils/data";
 
 const Skills = () => {
   const ref = useRef(null);

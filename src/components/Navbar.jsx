@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { FiSun, FiMoon, FiMenu, FiX } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
-import { socialLinks } from "../utils/hero";
+import { socialLinks } from "../utils/data";
+import nProgress from "nprogress";
+import "nprogress/nprogress.css";
 
 const Navbar = ({ darkMode, setDarkMode }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -22,7 +24,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           }
         });
       },
-      { threshold: 0.4 }, // 40% of section visible = active
+      { threshold: 0.4 },
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -31,7 +33,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
 
   return (
     <>
-      {/* ===================== DESKTOP SIDEBAR ===================== */}
+      {/* DESKTOP SIDEBAR */}
       <nav className="fixed top-0 left-0 h-full w-64 z-50 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800 shadow-sm transition-colors duration-300 hidden md:flex flex-col overflow-y-auto">
         {/* Dark mode toggle - top right */}
         <div className="absolute top-4 right-4">
@@ -49,7 +51,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           {/* Avatar */}
           <div className="h-24 w-24 rounded-full p-1 bg-yellow-500 dark:bg-yellow-400 shadow-lg">
             <img
-              src="/img/img1.jpg"
+              src="/img/profile-gappo.png"
               alt="Profile picture"
               className="w-full h-full rounded-full object-cover"
             />
@@ -61,7 +63,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           </h3>
           {/* Role badge */}
           <span className="text-xs text-yellow-600 dark:text-yellow-400 font-semibold bg-yellow-50 dark:bg-yellow-500/10 px-3 py-1 rounded-full">
-            Frontend Developer
+            Web Developer
           </span>
           {/* Social Links */}
           <div className="flex gap-2 mt-1">
@@ -86,6 +88,11 @@ const Navbar = ({ darkMode, setDarkMode }) => {
             <li key={link}>
               <a
                 href={`#${link.toLowerCase()}`}
+                onClick={() => {
+                  nProgress.start();
+                  setTimeout(() => nProgress.done(), 800); // simulate load time
+                  setMenuOpen(false); // keep this for mobile
+                }}
                 className={`flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-all duration-200 group
               ${
                 activeSection === link.toLowerCase()
@@ -121,7 +128,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
         </div>
       </nav>
 
-      {/* ===================== MOBILE TOP NAVBAR ===================== */}
+      {/*  MOBILE TOP NAVBAR  */}
       <nav className="fixed top-0 left-0 w-full z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-sm transition-colors duration-300 md:hidden">
         <div className="px-4 py-3 flex items-center justify-between w-full">
           {/* Logo */}
@@ -141,7 +148,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
         </div>
       </nav>
 
-      {/* ===================== MOBILE SLIDE-OUT MENU ===================== */}
+      {/* MOBILE SLIDE-OUT MENU */}
       <AnimatePresence>
         {menuOpen && (
           <>
@@ -185,7 +192,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
               <div className="flex flex-col items-center gap-3 px-6 py-6 border-b border-gray-200 dark:border-gray-700">
                 <div className="h-20 w-20 rounded-full p-1 bg-yellow-500 dark:bg-yellow-400 shadow-lg">
                   <img
-                    src="/img/img1.jpg"
+                    src="/img/profile-gappo.png"
                     alt="Profile picture"
                     className="w-full h-full rounded-full object-cover"
                   />
@@ -225,7 +232,11 @@ const Navbar = ({ darkMode, setDarkMode }) => {
                   >
                     <a
                       href={`#${link.toLowerCase()}`}
-                      onClick={() => setMenuOpen(false)}
+                      onClick={() => {
+                        nProgress.start();
+                        setTimeout(() => nProgress.done(), 800); // simulate load time
+                        // setMenuOpen(false);
+                      }}
                       className={`flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-all duration-200 group
                       ${
                         activeSection === link.toLowerCase()

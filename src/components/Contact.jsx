@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { contactInfo } from "../utils/contact";
-import { socialLinks } from "../utils/hero";
+import { contactInfo } from "../utils/data";
+import { socialLinks } from "../utils/data";
 import { FiSend } from "react-icons/fi";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const ref = useRef(null);
@@ -17,6 +18,7 @@ const Contact = () => {
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -25,12 +27,32 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate form submission
-    setTimeout(() => {
-      setLoading(false);
-      setSubmitted(true);
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    }, 1500);
+    setError("");
+
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      )
+      .then(() => {
+        setLoading(false);
+        setSubmitted(true);
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      })
+      .catch((err) => {
+        console.error("EmailJS error:", err);
+        setLoading(false);
+        setError(
+          "Something went wrong sending your message. Please try again or email me directly.",
+        );
+      });
   };
 
   return (
@@ -229,6 +251,13 @@ const Contact = () => {
                     className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-600 focus:outline-none focus:border-yellow-400 dark:focus:border-yellow-400 transition-colors duration-200 text-sm resize-none"
                   />
                 </div>
+
+                {/* Error Message */}
+                {error && (
+                  <p className="text-sm text-red-500 dark:text-red-400 font-medium -mt-2">
+                    {error}
+                  </p>
+                )}
 
                 {/* Submit Button */}
                 <motion.button

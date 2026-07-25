@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { FiBriefcase, FiBook, FiDownload, FiCalendar } from "react-icons/fi";
-import { education, experiences } from "../utils/resume";
+import { education, experiences } from "../utils/data";
 
 const TimelineItem = ({ item, index, isInView, isExperience }) => {
   return (
@@ -94,8 +94,8 @@ const Resume = () => {
 
           {/* Download Button */}
           <motion.a
-            href="/resume.pdf"
-            download
+            href="/Kingsley_Odoh_CV.pdf"
+            download="Kingsley_Odoh_CV.pdf"
             initial={{ opacity: 0, y: 10 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.3 }}

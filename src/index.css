@@ -19,6 +19,11 @@ html {
   scroll-behavior: smooth;
 }
 
+#nprogress .bar {
+  background: #eab308 !important;
+  height: 3px !important;
+}
+
 /* Offset scroll anchors to account for sidebar on desktop */
 @media (min-width: 768px) {
   section[id] {
