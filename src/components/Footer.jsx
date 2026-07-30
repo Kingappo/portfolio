@@ -10,7 +10,6 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto w-full">
         {/* Top Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mb-10">
-          {/* Brand */}
           <div className="flex flex-col gap-4">
             <a
               href="#"
@@ -20,8 +19,8 @@ const Footer = () => {
               <span className="text-gray-900 dark:text-white">Tech</span>
             </a>
             <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed max-w-xs">
-              A passionate frontend developer building beautiful and functional
-              web experiences one line of code at a time.
+              A passionate web developer, building beautiful, interactive and
+              functional web experiences one line of code at a time.
             </p>
           </div>
 

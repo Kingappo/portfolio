@@ -35,7 +35,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
     <>
       {/* DESKTOP SIDEBAR */}
       <nav className="fixed top-0 left-0 h-full w-64 z-50 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800 shadow-sm transition-colors duration-300 hidden md:flex flex-col overflow-y-auto">
-        {/* Dark mode toggle - top right */}
+        {/* Dark mode toggle button */}
         <div className="absolute top-4 right-4">
           <button
             onClick={() => setDarkMode(!darkMode)}
@@ -48,7 +48,6 @@ const Navbar = ({ darkMode, setDarkMode }) => {
 
         {/* Profile Section */}
         <div className="flex flex-col items-center gap-3 px-6 pt-12 pb-6 border-b border-gray-200 dark:border-gray-700">
-          {/* Avatar */}
           <div className="h-24 w-24 rounded-full p-1 bg-yellow-500 dark:bg-yellow-400 shadow-lg">
             <img
               src="/img/profile-gappo.png"
@@ -56,12 +55,12 @@ const Navbar = ({ darkMode, setDarkMode }) => {
               className="w-full h-full rounded-full object-cover"
             />
           </div>
-          {/* Name */}
+
           <h3 className="text-gray-900 dark:text-white font-bold text-base text-center leading-tight">
             Kingsley Oluchukwu
             <span className="block text-xs text-gray-400">Gappo</span>
           </h3>
-          {/* Role badge */}
+
           <span className="text-xs text-yellow-600 dark:text-yellow-400 font-semibold bg-yellow-50 dark:bg-yellow-500/10 px-3 py-1 rounded-full">
             Web Developer
           </span>
@@ -90,8 +89,8 @@ const Navbar = ({ darkMode, setDarkMode }) => {
                 href={`#${link.toLowerCase()}`}
                 onClick={() => {
                   nProgress.start();
-                  setTimeout(() => nProgress.done(), 800); // simulate load time
-                  setMenuOpen(false); // keep this for mobile
+                  setTimeout(() => nProgress.done(), 800);
+                  setMenuOpen(false);
                 }}
                 className={`flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-all duration-200 group
               ${
@@ -114,7 +113,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           ))}
         </ul>
 
-        {/* Bottom - Availability */}
+        {/* Availability */}
         <div className="px-6 py-4 border-t border-gray-200 dark:border-gray-700">
           <div className="flex items-center gap-2">
             <span className="relative flex h-2.5 w-2.5">
@@ -170,7 +169,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
               className="fixed top-0 left-0 h-full w-72 z-50 bg-white dark:bg-gray-900 shadow-2xl md:hidden flex flex-col overflow-y-auto"
             >
-              {/* Close + Dark mode row */}
+              {/* Dark mode & close icon */}
               <div className="flex items-center justify-between px-5 py-4 border-b border-gray-200 dark:border-gray-700">
                 <button
                   onClick={() => setDarkMode(!darkMode)}
@@ -202,7 +201,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
                   <span className="block text-xs text-gray-400">Gappo</span>
                 </h3>
                 <span className="text-xs text-yellow-600 dark:text-yellow-400 font-semibold bg-yellow-50 dark:bg-yellow-500/10 px-3 py-1 rounded-full">
-                  Frontend Developer
+                  Web Developer
                 </span>
                 <div className="flex gap-2">
                   {socialLinks.map((social, index) => (
@@ -234,8 +233,8 @@ const Navbar = ({ darkMode, setDarkMode }) => {
                       href={`#${link.toLowerCase()}`}
                       onClick={() => {
                         nProgress.start();
-                        setTimeout(() => nProgress.done(), 800); // simulate load time
-                        // setMenuOpen(false);
+                        setTimeout(() => nProgress.done(), 800);
+                        setMenuOpen(false);
                       }}
                       className={`flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-all duration-200 group
                       ${
